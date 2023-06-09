@@ -29,6 +29,7 @@ h1 {
     font-weight: 400;
 }
 
+
 /* style the game frame */
 .game-frame {
     display: flex;
@@ -38,6 +39,10 @@ h1 {
     background-color: #e1e1e1;
     border:#a1a1a1 solid 2px;
     padding: 2rem;
+}
+
+.new-game{
+    display: none;
 }
 
 /* style the preview image */
@@ -60,6 +65,7 @@ h1 {
 .game-frame h3 {
     font-size: 1rem;
     font-weight: 400;
+    text-align: center;
 }
 
 .game-frame button {
@@ -74,7 +80,7 @@ h1 {
     font-weight: 400;
 }
 
-.game-buttons button:hover {
+.game-frame button:hover {
     background-color: #e5e5e5;
 }
 
