@@ -1,10 +1,33 @@
-let description = document.getElementById("description");
-let button1 = document.getElementById("button1");
-let button2 = document.getElementById("button2");
-let button3 = document.getElementById("button3");
+class Game {
+    constructor(story) {
+        this.story = story;
+        this.currentArea = "aisle1";
+        this.opener = story.opener.openerText;
+        document.getElementById("opener").innerHTML = this.opener;
+    }
 
+    startGame() {
+        document.getElementById("new-game").style.display = "none";
+        document.getElementById("game-active").style.display = "flex";
+        this.renderStory(this.currentArea);
+    }
 
-description.textContent = "New Description";
-button1.textContent = "New 1";
-button2.textContent = "New 2";
-button3.textContent = "New 3";
+    renderStory(area) {
+        let story = this.story[area];
+        document.getElementById('description').innerHTML = story.storyPrompt;
+        for (let i = 1; i <= 4; i++) {
+            let button = document.getElementById('button' + i);
+            if (story.choices[i-1]) {
+                button.style.display = 'block';
+                button.innerHTML = story.choices[i-1].text;
+                button.onclick = () => this.renderStory(story.choices[i-1].destination);
+            } else {
+                button.style.display = 'none';
+            }
+        }
+    }
+}
+
+const game = new Game(zombiesAtWalmart);
+
+document.getElementById("start-button").addEventListener("click", () => game.startGame());

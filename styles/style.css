@@ -4,34 +4,33 @@ html {
     padding: 0;
     margin: 0;
     height: fit-content;
-}
+  }
 
-body {
+  body {
     font-family: 'DotGothic16', monospace;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f5f5f5;
-}
+  }
 
-/* set preview image size to 20% of the game frame */
-img {
+  /* set preview image size to 20% of the game frame */
+  img {
     width: 300px;
     height: 300px;
     padding: 0 2rem;
     border: 2px solid #c1c1c1;
     background-color: #f5f5f5;
-}
+  }
 
-/* style the header */
-h1 {
+  /* style the header */
+  h1 {
     font-size: 1.5rem;
     font-weight: 400;
-}
+  }
 
-
-/* style the game frame */
-.game-frame {
+  /* style the game frame */
+  #game-frame {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -39,36 +38,46 @@ h1 {
     background-color: #e1e1e1;
     border:#a1a1a1 solid 2px;
     padding: 2rem;
-}
+  }
 
-.new-game{
+  #game-active {
     display: none;
-}
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-/* style the preview image */
-.preview-image {
+  /* style the preview image */
+  #preview-image {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 50%;
-}
+  }
 
-/* style the game buttons */
-.game-buttons {
+  /* style the game buttons */
+  #game-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
+  }
 
-.game-frame h3 {
+  /* style the game over screen */
+  #game-over {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #game-frame h3 {
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
-}
+  }
 
-.game-frame button {
+  #game-frame button {
     width: 100%;
     padding: 1rem;
     margin: 4px;
@@ -78,17 +87,8 @@ h1 {
     color: #242424;
     font-size: 16px;
     font-weight: 400;
-}
+  }
 
-.game-frame button:hover {
+  #game-frame button:hover {
     background-color: #e5e5e5;
-}
-
-.game-over {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 50%;
-}
+  }
