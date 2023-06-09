@@ -15,29 +15,39 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles/style.css" />
     <!-- javascript -->
-    <script src="src/index.js"></script>
+    <script src="src/prompts.js"></script>
+    <script src="src/game.js"></script>
   </head>
   <body>
     <!-- Header -->
     <header>
       <div class="game-title">
-        <h1>Zombie game</h1>
+        <h1>Untitled zombie game</h1>
       </div>
     </header>
     <div class="game-frame">
+      <div class="new-game">
+        <h3>
+          You wake up inside a Walmart during a zombie apocalypse and want to
+          escape. See how long you can survive.
+        </h3>
+        <button id="start-button">Start</button>
+      </div>
       <div class="preview-image">
         <img src="images/zombie1.png" alt="zombie1" />
       </div>
       <div class="game-buttons">
         <h3 id="description">Description</h3>
-        <button id="choice1">1. </button>
-        <button id="choice2">2. </button>
-        <button id="choice3">3. </button>
+        <button id="button1" type="button">Text 1</button>
+        <button id="button2" type="button">Text 2</button>
+        <button id="button3" type="button">Text 3</button>
       </div>
       <div class="game-over">
         <h3>Game Over</h3>
-        <button id="restart">Restart</button>
+        <h4>Want to try again?</h4>
+        <button id="try-again">Try Again</button>
       </div>
     </div>
   </body>
+  <script src="src/script.js"></script>
 </html>
