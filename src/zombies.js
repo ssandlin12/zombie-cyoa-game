@@ -11,16 +11,16 @@ const zombiesAtWalmart = {
       {
         text: "1. Walk over and ask them for help. They can probably explain what's going on.",
         destination: "aisle1zombie",
-        outcome: "continue",
+        outcome: "alert",
       },
       {
-        text: "2. Slowly walk backwards and go to the next aisle to keep looking",
+        text: "2. Throw something over the aisle to get their attention.",
         destination: "aisle2",
-        outcome: "continue",
+        outcome: "safe",
       },
       {
         text: "3. Climb inside the nearby fridge and wait for them to leave.",
-        destination: "aisle1gameOver",
+        destination: "aisle1freezer",
         outcome: "gameOver",
       },
     ],
@@ -181,10 +181,10 @@ const zombiesAtWalmart = {
     ],
     image: "images/aisle1zombie.png",
   },
-  aisle1gameOver: {
+  aisle1freezer: {
     storyPrompt:
       "You climb into the fridge and close the door. However, you're unable to get out again and slowly freeze to death. Game over.",
-    image: "images/aisle1gameOver.png",
+    image: "images/aisle1freezer.png",
   },
   aisle2noise: {
     storyPrompt:
