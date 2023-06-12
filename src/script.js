@@ -47,4 +47,4 @@ class Game {
 const game = new Game(zombiesAtWalmart);
 
 document.getElementById("start-button").addEventListener("click", () => game.startGame());
-document.getElementById("try-again").addEventListener("click", () => game.startGame()); // Add event listener to 'try-again' button.
+document.getElementById("try-again").addEventListener("click", () => location.reload()); // Add event listener to 'try-again' button.
