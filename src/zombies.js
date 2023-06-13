@@ -75,7 +75,7 @@ const zombiesAtSuperMart = {
       {
         text: "Continue",
         destination: "aisle2",
-        outcome: "progress",
+        outcome: "continue",
       },
     ],
     image: "images/aisle1continue.png",
@@ -173,7 +173,7 @@ const zombiesAtSuperMart = {
       {
         text: "Continue",
         destination: "aisle3",
-        outcome: "progress",
+        outcome: "alert",
       },
     ],
     image: "images/aisle2throw.png",
@@ -199,5 +199,17 @@ const zombiesAtSuperMart = {
       },
     ],
     image: "images/aisle3.png",
+  },
+  aisle3tv: {
+    storyPrompt:
+      "For some reason, you decide to watch TV. Lucky for you, someone connected the TV to the security cameras. You watch the zombies' movements and evade them.",
+    choices: [
+      {
+        text: "Continue",
+        destination: "aisle4",
+        outcome: "interject",
+      },
+    ],
+    image: "images/aisle3tv.png",
   },
 };
