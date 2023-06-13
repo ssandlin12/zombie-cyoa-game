@@ -61,6 +61,7 @@ h1 {
 
 #timer-number {
     display: none;
+    margin-left: 24px;
 }
 
 /* style the preview image */
