@@ -5,12 +5,12 @@ class Game {
     this.timer = null;
     this.timeRemaining = 0;
     this.opener = story.opener.openerText;
-    this.gameOverStatus = false;
     document.getElementById("opener").innerHTML = this.opener;
   }
 
   startTimer() {
-    this.timeRemaining = 10; // set time to 10 seconds
+    this.stopTimer();
+    this.timeRemaining = 15; // set time to 15 seconds
     document.getElementById("timer-text").textContent = "You've been spotted! ";
     document.getElementById("timer-text").style.color = "red";
     document.getElementById("timer-text").classList.add("timer-alert");
@@ -21,12 +21,13 @@ class Game {
       this.timeRemaining--;
       document.getElementById("timer-number").textContent = this.timeRemaining;
 
-      if (this.timeRemaining === 0 && this.gameOverStatus === false) {
+      if (this.timeRemaining === 0) {
         clearInterval(this.timer);
-        this.gameOver("genericZombieDeath", this.story.genericZombieDeath.image);
+        this.gameOver(
+          "genericZombieDeath",
+          this.story.genericZombieDeath.image
+        );
       }
-      else if (this.timeRemaining === 0 && this.gameOverStatus === true) {
-        clearInterval(this.timer);}
     }, 1000); // decrement every second
   }
 
@@ -49,37 +50,38 @@ class Game {
     document.getElementById("description").innerHTML = story.storyPrompt;
     document.querySelector("#game-active #preview-image img").src = story.image; // Update the image source
     for (let i = 1; i <= 3; i++) {
-        let button = document.getElementById("button" + i);
-        if (story.choices[i - 1]) {
-          button.style.display = "block";
-          button.innerHTML = story.choices[i - 1].text;
-          button.onclick = () => {
-            if (story.choices[i - 1].outcome === "gameOver") {
-              this.gameOver(
-                story.choices[i - 1].destination,
-                this.story[story.choices[i - 1].destination].image
-              );
-            } else if (story.choices[i - 1].outcome === "continue") {
-              this.currentArea = story.choices[i - 1].destination;
-              this.renderStory(story.choices[i - 1].destination);
-            } else if (story.choices[i - 1].outcome === "alert") {
-              this.startTimer();
-              this.currentArea = story.choices[i - 1].destination;
-              this.renderStory(story.choices[i - 1].destination);
-            } else if (story.choices[i - 1].outcome === "interject") {
-              this.stopTimer();
-              this.currentArea = story.choices[i - 1].destination;
-              this.renderStory(story.choices[i - 1].destination);
-            } else {
-              this.renderStory(story.choices[i - 1].destination);
-            }
-          };
-        } else {
-          button.style.display = "none";
-        }
+      let button = document.getElementById("button" + i);
+      let storyChoice = story.choices[i - 1];
+      if (storyChoice) {
+        button.style.display = "block";
+        button.innerHTML = storyChoice.text;
+        button.onclick = () => {
+          if (storyChoice.outcome === "gameOver") {
+            this.gameOver(
+              storyChoice.destination,
+              this.story[storyChoice.destination].image,
+              this.stopTimer()
+            );
+          } else if (storyChoice.outcome === "continue") {
+            this.currentArea = storyChoice.destination;
+            this.renderStory(storyChoice.destination);
+          } else if (storyChoice.outcome === "alert") {
+            this.startTimer();
+            this.currentArea = storyChoice.destination;
+            this.renderStory(storyChoice.destination);
+          } else if (storyChoice.outcome === "interject") {
+            this.stopTimer();
+            this.currentArea = storyChoice.destination;
+            this.renderStory(storyChoice.destination);
+          } else {
+            this.renderStory(storyChoice.destination);
+          }
+        };
+      } else {
+        button.style.display = "none";
       }
     }
-
+  }
 
   gameOver(destination, gameOverImage) {
     document.getElementById("game-active").style.display = "none";

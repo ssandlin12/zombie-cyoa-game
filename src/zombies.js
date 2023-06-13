@@ -1,29 +1,30 @@
 const zombiesAtSuperMart = {
   opener: {
     openerText:
-      "This is a text-based, choose-your-own-adventure game where you try to escape from a super store. See how long you can survive.",
+      "This is a text-based, choose-your-own-adventure game where you try to escape from a SuperMart store. See how long you can survive.",
     image: "images/opener.png",
   },
   genericZombieDeath: {
-    storyPrompt: "The zombie caught up to you and bit you. You now join the ranks of the undead. Game over.",
+    storyPrompt:
+      "The zombie caught up to you and bit you. You now join the ranks of the undead. Game over.",
     image: "images/genericzombieDeath.png",
   },
   aisle1: {
     storyPrompt:
-      "You wake up in a SuperMart during the middle of the day. You don't know how long you were unconscious. As you look around, you see a person standing across the aisle with his back to you. What do you do next?",
+      "You wake up in a SuperMart. You don't know how long you were unconscious. As you look around, you see someone standing with their back to you.",
     choices: [
       {
-        text: "1. Walk over and ask for help. They can probably explain what's going on.",
+        text: "1. Walk over to them and ask for help.",
         destination: "aisle1zombie",
         outcome: "alert",
       },
       {
-        text: "2. Throw a nearby water bottle at them.",
+        text: "2. Throw a nearby water bottle at their head.",
         destination: "aisle1continue",
         outcome: "interject",
       },
       {
-        text: "3. Climb inside the nearby fridge and wait for them to leave.",
+        text: "3. Climb inside the nearby fridge and hide until they leave.",
         destination: "aisle1freezer",
         outcome: "gameOver",
       },
@@ -37,20 +38,20 @@ const zombiesAtSuperMart = {
   },
   aisle1zombie: {
     storyPrompt:
-      "As you approach the person, they slowly turn around. Their eyes are vacant, skin pale and splotchy. You realize this is a zombie. It starts moving towards you. What do you do?",
+      "As you approach the person, they slowly turn around. You quickly realize this is a zombie. It starts walking towards you. What do you do?",
     choices: [
       {
-        text: "1. Rush towards the zombie and shove it out of the way.",
+        text: "1. Fight the zombie with your bare hands.",
         destination: "aisle1zombieDeath",
         outcome: "gameOver",
       },
       {
-        text: "2. Try to run around the zombie and get to the next aisle.",
+        text: "2. Run around the zombie and go to the next aisle.",
         destination: "aisle2",
         outcome: "alert",
       },
       {
-        text: "3. Try to negotiate with the zombie.",
+        text: "3. Speak calmly and negotiate with the zombie.",
         destination: "aisle1zombieYell",
         outcome: "gameOver",
       },
@@ -58,135 +59,145 @@ const zombiesAtSuperMart = {
     image: "images/aisle1zombie.png",
   },
   aisle1zombieDeath: {
-    storyPrompt: "You rush at the zombie and try to shove it out of the way. However, it's faster than you expected and it catches your arm. Game over.",
+    storyPrompt:
+      "You swing your arm to hit the zombie. It's faster than you expected and it catches your arm. Game over.",
     image: "images/aisle1zombieBite.png",
   },
   aisle1zombieYell: {
-    storyPrompt: "Your voice gets louder until you're yelling, which attracts every zombie in the store. They all proceed to bite you. Game over.",
+    storyPrompt:
+      "You call out. Your voice gets louder until you're yelling, which attracts every zombie in the store. Game over.",
     image: "images/aisle1zombieYell.png",
   },
   aisle1continue: {
-    storyPrompt: "You throw a water bottle at them. Your throw completely misses, but fortunately, they end up walking in the direction of the noise. The aisle is now clear.",
+    storyPrompt:
+      "Your throw completely misses and hits the back wall. Fortunately the zombie follows the noise. The aisle is now clear.",
     choices: [
       {
-        text: 'Continue',
+        text: "Continue",
         destination: "aisle2",
         outcome: "progress",
       },
     ],
     image: "images/aisle1continue.png",
-},
-aisle2: {
-  storyPrompt: "You enter the next aisle and see rows of canned food. You quickly grab one in case you need it later. What do you do now?",
-  choices: [
-    {
-      text: "1. Grab some more canned food. You never know when you'll need it.",
-      destination: "aisle2cannedFood",
-      outcome: "alert",
-    },
-    {
-      text: "2. Hide in the aisle and wait for the zombie to pass.",
-      destination: "aisle2hide",
-      outcome: "alert",
-    },
-    {
-      text: "3. Put the can back on the shelf, you don't need it.",
-      destination: "aisle2putCanBack",
-      outcome: "gameOver",
-    },
-  ],
-  image: "images/aisle2.png",
-},
-aisle2cannedFood: {
-  storyPrompt: "You grab a few more cans of food. As you're loading up, you see a zombie staring at you from down the aisle. What do you do?",
-  choices: [
-    {
-      text: "1. Forget the cans. Pull a shelf down to block the aisle.",
-      destination: "aisle2topple",
-      outcome: "gameOver",
-    },
-    {
-      text: "2. Throw a can of beans at the zombie.",
-      destination: "aisle2continue",
-      outcome: "alert",
-    },
-    {
-      text: "3. Run away carrying your cans of food.",
-      destination: "aisle2foodRun",
-      outcome: "gameOver",
-    },
-  ],
-  image: "images/aisle2cansHands.png",
-},
-aisle2hide: {
-  storyPrompt: "You wait and hide for a minute. As you're about to leave, you turn and see a zombie standing a few feet away. What do you do?",
-  choices: [
-    {
-      text: "1. Throw a can of beans at the zombie.",
-      destination: "aisle2continue",
-      outcome: "alert",
-    },
-    {
-      text: "2. Keep hiding and hope the zombie doesn't see you.",
-      destination: "aisle2hideAgain",
-      outcome: "gameOver",
-    },
-    {
-      text: "3. Call for help. Maybe someone in the store is nearby.",
-      destination: "aisle1zombieYell",
-      outcome: "gameOver",
-    },
-  ],
-  image: "images/aisle2hide.png",
-
-},
-aisle2topple: {
-  storyPrompt: "You pull a shelf down to block the aisle. The shelf falls on you and you are crushed to death. Game over.",
+  },
+  aisle2: {
+    storyPrompt:
+      "You enter the next aisle and see rows of canned food. You grab one of the cans. It's baked beans. What now?",
+    choices: [
+      {
+        text: "1. Stock up on canned food while you can.",
+        destination: "aisle2cannedFood",
+        outcome: "alert",
+      },
+      {
+        text: "2. Hide in the aisle and wait for any zombies to pass.",
+        destination: "aisle2hide",
+        outcome: "alert",
+      },
+      {
+        text: "3. Place the can back on the shelf.",
+        destination: "aisle2putCanBack",
+        outcome: "gameOver",
+      },
+    ],
+    image: "images/aisle2.png",
+  },
+  aisle2cannedFood: {
+    storyPrompt:
+      "As you're loading your arms with cans, you see a zombie turn the corner and walk towards you.",
+    choices: [
+      {
+        text: "1. Topple a shelf to block the aisle.",
+        destination: "aisle2topple",
+        outcome: "gameOver",
+      },
+      {
+        text: "2. Throw a can of beans at the zombie.",
+        destination: "aisle2continue",
+        outcome: "alert",
+      },
+      {
+        text: "3. Run away carrying all your cans.",
+        destination: "aisle2foodRun",
+        outcome: "gameOver",
+      },
+    ],
+    image: "images/aisle2cansHands.png",
+  },
+  aisle2hide: {
+    storyPrompt:
+      "You wait and hide for a little bit. You're about to relax when a zombie turns the corner towards you.",
+    choices: [
+      {
+        text: "1. Throw a can of beans at the zombie.",
+        destination: "aisle2continue",
+        outcome: "alert",
+      },
+      {
+        text: "2. Keep hiding and hope the zombie is blind.",
+        destination: "aisle2hideAgain",
+        outcome: "gameOver",
+      },
+      {
+        text: "3. Yell for help. Maybe a survivor is nearby.",
+        destination: "aisle1zombieYell",
+        outcome: "gameOver",
+      },
+    ],
+    image: "images/aisle2hide.png",
+  },
+  aisle2topple: {
+    storyPrompt:
+      "You topple a shelf. Like dominoes, the other shelves fall and you're crushed to death. Game over.",
     image: "images/aisle2topple.png",
-},
-aisle2putCanBack: {
-  storyPrompt: "You start to put the can back but it accidentally falls and hits the ground. The noise attracts zombies from every direction. Game over.",
+  },
+  aisle2putCanBack: {
+    storyPrompt:
+      "You try to put the can back but it falls and hits the ground. The noise attracts zombies from every direction. Game over.",
     image: "images/aisle2cans.png",
-},
-aisle2foodRun: {
-  storyPrompt: "You run away with your cans of food. However, you trip and fall. Before you can get up, a zombie has reached you. Game over.",
+  },
+  aisle2foodRun: {
+    storyPrompt:
+      "You make it 10 steps with your cans before you trip and fall. Before you can get up, a zombie is there. Game over.",
     image: "images/aisle2cans.png",
-},
-aisle2hideAgain: {
-  storyPrompt: "You try to hide again, but other zombies have now closed in and you have nowhere to run. Game over.",
+  },
+  aisle2hideAgain: {
+    storyPrompt:
+      "Zombies are apparently not blind. It walks right up to you and bites you. Game over.",
     image: "images/aisle2hideAgain.png",
-},
-aisle2continue: {
-  storyPrompt: "The zombie falls backwards and you run past it as other zombies appear. You continue down the aisle, but it's still chasing you as you enter the electronics section.",
-  choices: [
-    {
-      text: 'Continue',
-      destination: "aisle3",
-      outcome: "progress",
-    },
-  ],
-  image: "images/aisle2throw.png",
-},
-aisle3: {
-  storyPrompt: "You wait and hide for a minute. As you're about to leave, you turn and see a zombie standing a few feet away. What do you do?",
-  choices: [
-    {
-      text: "1. Throw a can of beans at the zombie.",
-      destination: "aisle2continue",
-      outcome: "alert",
-    },
-    {
-      text: "2. Keep hiding and hope the zombie doesn't see you.",
-      destination: "aisle2hideAgain",
-      outcome: "gameOver",
-    },
-    {
-      text: "3. Call for help. Maybe someone in the store is nearby.",
-      destination: "aisle1zombieYell",
-      outcome: "gameOver",
-    },
-  ],
-  image: "images/aisle2hide.png",
-
-},
+  },
+  aisle2continue: {
+    storyPrompt:
+      "The can of beans hits the zombie in the head. It falls down and you run away towards the electronics section.",
+    choices: [
+      {
+        text: "Continue",
+        destination: "aisle3",
+        outcome: "progress",
+      },
+    ],
+    image: "images/aisle2throw.png",
+  },
+  aisle3: {
+    storyPrompt:
+      "You make it to the electronics section filled with TV's and other items. The zombies are still right behind you though.",
+    choices: [
+      {
+        text: "1. Turn around and run back to the food section.",
+        destination: "genericZombieDeath",
+        outcome: "gameOver",
+      },
+      {
+        text: "2. Search for a tool you can use to fight back.",
+        destination: "aisle3tools",
+        outcome: "alert",
+      },
+      {
+        text: "3. Go over and watch some television.",
+        destination: "aisle3tv",
+        outcome: "interject",
+      },
+    ],
+    image: "images/aisle3.png",
+  },
 };
