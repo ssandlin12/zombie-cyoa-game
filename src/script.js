@@ -70,6 +70,7 @@ class Game {
             this.currentArea = storyChoice.destination;
             this.renderStory(storyChoice.destination);
           } else if (storyChoice.outcome === "interject") {
+            document.getElementById("timer-text").style.color = 'green';
             this.stopTimer();
             this.currentArea = storyChoice.destination;
             this.renderStory(storyChoice.destination);

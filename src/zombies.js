@@ -75,7 +75,7 @@ const zombiesAtSuperMart = {
       {
         text: "Continue",
         destination: "aisle2",
-        outcome: "progress",
+        outcome: "continue",
       },
     ],
     image: "images/aisle1continue.png",
@@ -173,7 +173,7 @@ const zombiesAtSuperMart = {
       {
         text: "Continue",
         destination: "aisle3",
-        outcome: "progress",
+        outcome: "alert",
       },
     ],
     image: "images/aisle2throw.png",
@@ -199,5 +199,80 @@ const zombiesAtSuperMart = {
       },
     ],
     image: "images/aisle3.png",
+  },
+  aisle3tools: {
+    storyPrompt: "You see three options nearby: an HDMI cable, a selfie stick, and a large TV.",
+    choices: [
+      {
+        text: "1. Grab the HDMI cable.",
+        destination: "aisle3hdmi",
+        outcome: "gameOver",
+      },
+      {
+        text: "2. Grab the selfie stick.",
+        destination: "aisle3selfie",
+        outcome: "alert",
+      },
+      {
+        text: "3. Grab the large TV.",
+        destination: "aisle3tv",
+        outcome: "interject",
+      },
+    ],
+    image: "images/aisle3tools.png",
+  },
+  aisle3hdmi: {
+    storyPrompt:
+      "You grab the HDMI cable but then realize it's wrapped up with a tie. As you try to untie it, a zombie bites you. Game over.",
+    image: "images/aisle3hdmi.png",
+  },
+  aisle3tv: {
+    storyPrompt: 'For some reason you decide to watch TV. Lucky for you, someone connected the TV to the security camera. You hide as zombies pass by.',
+    choices: [
+      {
+        text: "Continue",
+        destination: "aisle4",
+        outcome: "interject",
+      },
+    ],
+    image: "images/aisle3tv.png",
+  },
+  aisle3selfie: {
+    storyPrompt: "You grab the selfie stick and knock back the zombies back long enough to run to the next aisle.",
+    choices: [
+      {
+        text: "Continue",
+        destination: "aisle4",
+        outcome: "alert",
+      },
+    ],
+    image: "images/aisle3selfieAttack.png",
+  },
+  aisle4: {
+    storyPrompt:
+      "You've made it to the checkout area at the front of the store. Zombies are walking near the exit. There's also a dead body lying nearby.",
+    choices: [
+      {
+        text: "1. Search the dead body near you.",
+        destination: "aisle4deadBody",
+        outcome: "alert",
+      },
+      {
+        text: "2. Open up a cash register booth and see what's inside.",
+        destination: "aisle4register",
+        outcome: "alert",
+      },
+      {
+        text: "3. Make a break for the door before the zombies notice you.",
+        destination: "aisle4door",
+        outcome: "gameOver",
+      },
+    ],
+    image: "images/aisle4.png",
+  },
+  aisle4door: {
+    storyPrompt:
+      "You run for the door and try to open it. It's locked. By the time you realize this, the zombies have already swarmed you. Game over.",
+    image: "images/aisle4door.png",
   },
 };
