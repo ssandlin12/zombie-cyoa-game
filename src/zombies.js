@@ -228,6 +228,9 @@ const zombiesAtSuperMart = {
   },
   aisle3tv: {
     storyPrompt: 'For some reason you decide to watch TV. Lucky for you, someone connected the TV to the security camera. You hide as zombies pass by.',
+  aisle3tv: {
+    storyPrompt:
+      "For some reason, you decide to watch TV. Lucky for you, someone connected the TV to the security cameras. You watch the zombies' movements and evade them.",
     choices: [
       {
         text: "Continue",
@@ -275,4 +278,6 @@ const zombiesAtSuperMart = {
       "You run for the door and try to open it. It's locked. By the time you realize this, the zombies have already swarmed you. Game over.",
     image: "images/aisle4door.png",
   },
+
 };
+}

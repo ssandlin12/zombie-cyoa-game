@@ -1,3 +1,4 @@
+
 class Game {
   constructor(story) {
     this.story = story;
@@ -74,6 +75,7 @@ class Game {
             this.stopTimer();
             this.currentArea = storyChoice.destination;
             this.renderStory(storyChoice.destination);
+            document.getElementById("timer-text").style.color = "green";
           } else {
             this.renderStory(storyChoice.destination);
           }
