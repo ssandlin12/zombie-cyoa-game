@@ -279,5 +279,5 @@ const zombiesAtSuperMart = {
     image: "images/aisle4door.png",
   },
 
-};
+}
 }
