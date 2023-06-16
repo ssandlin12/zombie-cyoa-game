@@ -14,7 +14,6 @@ class Game {
     this.timeRemaining = 15; // set time to 15 seconds
     document.getElementById("timer-text").textContent = "You've been spotted! ";
     document.getElementById("timer-text").style.color = "red";
-    document.getElementById("timer-text").classList.add("timer-alert");
     document.getElementById("timer-number").style.display = "flex";
     document.getElementById("timer-number").textContent = this.timeRemaining;
 
@@ -35,7 +34,6 @@ class Game {
   stopTimer() {
     clearInterval(this.timer);
     document.getElementById("timer-text").textContent = "Not yet noticed";
-    document.getElementById("timer-text").classList.remove("timer-alert");
     document.getElementById("timer-number").style.display = "none";
   }
 
