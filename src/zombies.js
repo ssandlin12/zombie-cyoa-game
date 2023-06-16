@@ -227,8 +227,6 @@ const zombiesAtSuperMart = {
     image: "images/aisle3hdmi.png",
   },
   aisle3tv: {
-    storyPrompt: 'For some reason you decide to watch TV. Lucky for you, someone connected the TV to the security camera. You hide as zombies pass by.',
-  aisle3tv: {
     storyPrompt:
       "For some reason, you decide to watch TV. Lucky for you, someone connected the TV to the security cameras. You watch the zombies' movements and evade them.",
     choices: [
@@ -258,12 +256,12 @@ const zombiesAtSuperMart = {
       {
         text: "1. Search the dead body near you.",
         destination: "aisle4deadBody",
-        outcome: "alert",
+        outcome: "gameOver",
       },
       {
         text: "2. Open up a cash register booth and see what's inside.",
         destination: "aisle4register",
-        outcome: "alert",
+        outcome: "gameOver",
       },
       {
         text: "3. Make a break for the door before the zombies notice you.",
@@ -278,6 +276,12 @@ const zombiesAtSuperMart = {
       "You run for the door and try to open it. It's locked. By the time you realize this, the zombies have already swarmed you. Game over.",
     image: "images/aisle4door.png",
   },
-
-}
+  aisle4deadBody: {
+    storyPrompt: "You approach the body and begin to check its pockets. As you're about to grab a key, the body wakes up and bites you. Game over.",
+    image: "images/aisle4deadBody.png",
+  },
+  aisle4register: {
+    storyPrompt: "You open up the cash register and find a key. You use it to open the door and escape. You win!.",
+    image: "images/aisle4register.png",
+  },
 }
