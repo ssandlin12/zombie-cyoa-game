@@ -7,7 +7,7 @@ const zombiesAtSuperMart = {
   genericZombieDeath: {
     storyPrompt:
       "The zombie caught up to you and bit you. You now join the ranks of the undead. Game over.",
-    image: "images/genericzombieDeath.png",
+    image: "images/genericZombieDeath.png",
   },
   aisle1: {
     storyPrompt:
