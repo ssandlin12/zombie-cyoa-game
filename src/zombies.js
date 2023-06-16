@@ -4,10 +4,10 @@ const zombiesAtSuperMart = {
       "This is a text-based, choose-your-own-adventure game where you try to escape from a SuperMart store. See how long you can survive.",
     image: "images/opener.png",
   },
-  genericZombieDeath: {
+  aisle1gameOver: {
     storyPrompt:
       "The zombie caught up to you and bit you. You now join the ranks of the undead. Game over.",
-    image: "images/genericZombieDeath.png",
+    image: "images/aisle1gameOver.png",
   },
   aisle1: {
     storyPrompt:
@@ -201,7 +201,8 @@ const zombiesAtSuperMart = {
     image: "images/aisle3.png",
   },
   aisle3tools: {
-    storyPrompt: "You see three options nearby: an HDMI cable, a selfie stick, and a large TV.",
+    storyPrompt:
+      "You see three options nearby: an HDMI cable, a selfie stick, and a large TV.",
     choices: [
       {
         text: "1. Grab the HDMI cable.",
@@ -239,7 +240,8 @@ const zombiesAtSuperMart = {
     image: "images/aisle3tv.png",
   },
   aisle3selfie: {
-    storyPrompt: "You grab the selfie stick and knock back the zombies back long enough to run to the next aisle.",
+    storyPrompt:
+      "You grab the selfie stick and knock back the zombies back long enough to run to the next aisle.",
     choices: [
       {
         text: "Continue",
@@ -271,17 +273,24 @@ const zombiesAtSuperMart = {
     ],
     image: "images/aisle4.png",
   },
+  genericZombieDeath: {
+    storyPrompt:
+      "The zombie caught up to you and bit you. You now join the ranks of the undead. Game over.",
+    image: "images/genericZombieDeath.png",
+  },
   aisle4door: {
     storyPrompt:
       "You run for the door and try to open it. It's locked. By the time you realize this, the zombies have already swarmed you. Game over.",
     image: "images/aisle4door.png",
   },
   aisle4deadBody: {
-    storyPrompt: "You approach the body and begin to check its pockets. As you're about to grab a key, the body wakes up and bites you. Game over.",
+    storyPrompt:
+      "You approach the body and begin to check its pockets. As you're about to grab a key, the body wakes up and bites you. Game over.",
     image: "images/aisle4deadBody.png",
   },
   aisle4register: {
-    storyPrompt: "You open up the cash register and find a key. You use it to open the door and escape. You win!.",
+    storyPrompt:
+      "You open up the cash register and find a key. You use it to open the door and escape. You win!.",
     image: "images/aisle4register.png",
   },
-}
+};
